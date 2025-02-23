@@ -24,20 +24,3 @@ class Banco:
         else:
             self.cola_general.append(nombre)  # Agrega a la cola normal
             print(f" Cliente {nombre} agregado a la cola.")
-
-    def atender_cliente(self):
-        """
-        Atiende al siguiente cliente en la cola.
-        - Si hay clientes prioritarios, los atiende primero.
-        - Si no hay prioritarios, atiende a los clientes normales.
-        - Si no hay nadie en la cola, muestra un mensaje de advertencia.
-        """
-        if self.cola_prioritaria:
-            cliente = self.cola_prioritaria.popleft()  # Atiende al primer cliente prioritario
-            print(f" Atendiendo a cliente PRIORITARIO: {cliente}")
-        elif self.cola_general:
-            cliente = self.cola_general.popleft()  # Atiende al primer cliente normal
-            print(f" Atendiendo a cliente: {cliente}")
-        else:
-            print(" No hay clientes en la cola.")
-            #1
